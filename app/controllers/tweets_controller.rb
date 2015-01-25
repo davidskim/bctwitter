@@ -3,6 +3,7 @@ class TweetsController < ApplicationController
 	before_action :authenticate_user!
 	def new 
 		@tweet = Tweet.new
+		@tweets = current_user.tweets
 
 	end
 
@@ -14,6 +15,7 @@ class TweetsController < ApplicationController
 
 
 		#@tweet = Tweet.create(tweet_params)
+		@tweets = current_user.tweets
 		flash.now[:success] = "Tweet Created"
 		render 'new'
 	end

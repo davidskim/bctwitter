@@ -3,3 +3,7 @@
 	<%= f.input :content %>
 	<%= f.button :submit %>
 <% end %>
+
+<% @tweets.each do |tweet| %>
+	<%= tweet.content %>
+<% end %>
